@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cambridge Dictionary Search</title>
+  <title>Dictionary Search</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -10,80 +10,75 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
+      margin: 0;
       padding: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
+      background: transparent;
     }
 
     .dictionary-widget {
-      max-width: 400px;
-      width: 100%;
-      background: linear-gradient(to right, #0f193d, #2c2f62, #1a2753);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-
-    .dictionary-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .dictionary-header img {
-      height: 32px;
+      width: 90%;
+      max-width: 600px;
+      background: transparent;
     }
 
     .dictionary-form {
       display: flex;
-      gap: 10px;
       width: 100%;
+      gap: 0.5rem;
+      background: transparent;
     }
 
     .dictionary-input {
       flex: 1;
-      padding: 10px 14px;
-      font-size: 14px;
-      border-radius: 20px;
-      border: none;
-      outline: none;
-      color: #333;
+      padding: 0.75em 1em;
+      font-size: 1rem;
+      border-radius: 2em;
+      border: 1px solid #ccc;
       background-color: #fff;
-      box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+      color: #333;
+      outline: none;
+      transition: border 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .dictionary-input:focus {
+      border-color: #999;
     }
 
     .dictionary-button {
-      background-color: #FEC400;
-      border: none;
+      width: 2.75em;
+      height: 2.75em;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      border: none;
+      background-color: #0078D4;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0;
+      transition: background-color 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dictionary-button:hover {
+      background-color: #005fa3;
     }
 
     .dictionary-button img {
-      width: 18px;
-      height: 18px;
+      width: 1em;
+      height: 1em;
     }
 
     @media (max-width: 480px) {
-      .dictionary-widget {
-        padding: 15px;
-      }
-
       .dictionary-input {
-        font-size: 12px;
+        font-size: 0.9rem;
       }
 
       .dictionary-button {
-        width: 36px;
-        height: 36px;
+        width: 2.5em;
+        height: 2.5em;
       }
     }
   </style>
@@ -100,24 +95,18 @@
     <input type="hidden" name="utm_medium" value="widget_searchbox" />
     <input type="hidden" name="utm_campaign" value="widget_tracking" />
 
-    <div class="dictionary-header">
-      <a href="https://dictionary.cambridge.org/" target="_blank">
-        <img src="https://dictionary.cambridge.org/external/images/freesearch/sbl.png?version=6.0.54" alt="Cambridge Dictionary" />
-      </a>
-    </div>
-
     <div class="dictionary-form">
       <input
         class="dictionary-input"
         name="q"
-        placeholder="Search English"
+        placeholder="Search English words..."
         type="search"
         title="Search"
         aria-label="Search"
         required
       />
       <button class="dictionary-button" type="submit" title="Search">
-        <img src="https://dictionary.cambridge.org/external/images/freesearch/search.png?version=6.0.54" alt="Search Icon" />
+        <img src="https://dictionary.cambridge.org/external/images/freesearch/search.png?version=6.0.54" alt="Search" />
       </button>
     </div>
   </form>
